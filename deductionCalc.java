@@ -19,7 +19,6 @@ public class deductionCalc {
 
 	public static double dependents(String[] depsNames) {
 		for (String name : depsNames) {
-			System.out.println(name.trim());
 			if ((name.charAt(0) == 'A') || (name.charAt(0) == 'a')) {
 				depCost += (DEP_BASE - (DEP_BASE * .1));
 			} else {
@@ -35,7 +34,7 @@ public class deductionCalc {
         String nextName = "";
         System.out.println("Enter employee name,(only 1 name expected)");
         totalAnnualCost += employee(sc.nextLine().trim());
-		System.out.println("\nEnter dependents names (comma separated)");
+		System.out.println("\nEnter dependents names (comma separated, no whitespace)");
 		totalAnnualCost += dependents(sc.nextLine().split(","));
 		double monthlyCost = totalAnnualCost/26;
 		System.out.println("\nincome per month = $" + df.format(INCOME)  + "\nyearly deductions = $" + df.format(totalAnnualCost) + "\ndeductoin cost/month = $" + 
